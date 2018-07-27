@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="756.0" prefWidth="1028.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.arena.maineventhandler.MainEventHandler">
+  <children>
+    <VBox prefHeight="756.0" prefWidth="1028.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <TabPane prefHeight="756.0" prefWidth="1028.0" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+            <Tab text="Estructuras Comerciales">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <BorderPane fx:id="centro" prefHeight="720.0" prefWidth="1028.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+                      <center>
+                        <TreeView fx:id="treeViewID1" prefHeight="200.0" prefWidth="200.0" />
+                      </center>
+
+                      <left>
+                        <VBox prefHeight="200.0" prefWidth="200.0">
+                          <children>
+                            <Button fx:id="botonCargarPU" mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Cargar PU">
+                              <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" fx:id="x2" />
+                              </VBox.margin>
+                            </Button>
+                            <Button fx:id="generarRama" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Generar Rama">
+                              <VBox.margin>
+                                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+                              </VBox.margin>
+                            </Button>
+                            <Button fx:id="cargarModificaciones" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Cargar Modificaciones" VBox.margin="$x1" />
+                            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Generar Reportes" VBox.margin="$x1" />
+                          </children>
+                        </VBox>
+                      </left>
+                      <top>
+                        <HBox prefHeight="75.0" prefWidth="75.0">
+                          <children>
+                            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                            <ImageView fitHeight="75.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="att2.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </HBox>
+                      </top>
+                    </BorderPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Forecast Venta Base">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <BorderPane prefHeight="720.0" prefWidth="1028.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <left>
+                        <VBox prefHeight="200.0" prefWidth="200.0">
+                          <children>
+                            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Cargar Venta" VBox.margin="$x2"/>
+                            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Generar Forecast" VBox.margin="$x1"/>
+                          </children>
+                        </VBox>
+                      </left>
+                      <top>
+                        <HBox prefHeight="75.0" prefWidth="75.0">
+                          <children>
+                            <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                            <ImageView fitHeight="75.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="att2.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </HBox>
+                      </top>
+                    </BorderPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Colaboracion Cuotas">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <BorderPane prefHeight="720.0" prefWidth="1028.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <left>
+                        <VBox prefHeight="200.0" prefWidth="200.0">
+                          <children>
+                            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Cargar Playbook" VBox.margin="$x2" />
+                            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Generar Reportes" VBox.margin="$x1" />
+                          </children>
+                        </VBox>
+                      </left>
+                      <top>
+                        <HBox prefHeight="75.0" prefWidth="75.0">
+                          <children>
+                            <Region prefHeight="75.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                            <ImageView fitHeight="75.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="att2.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </HBox>
+                      </top>
+                    </BorderPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Control de Versiones">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <BorderPane prefHeight="720.0" prefWidth="1028.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <left>
+                        <VBox prefHeight="200.0" prefWidth="200.0">
+                          <children>
+                            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Consultar y Comparar" VBox.margin="$x2" />
+                            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="180.0" text="Guardar Revision" VBox.margin="$x1" />
+                          </children>
+                        </VBox>
+                      </left>
+                      <top>
+                        <HBox prefHeight="75.0" prefWidth="75.0">
+                          <children>
+                            <Region prefHeight="75.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                            <ImageView fitHeight="75.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="att2.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </HBox>
+                      </top>
+                    </BorderPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Manual de Usuario">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <BorderPane prefHeight="720.0" prefWidth="1028.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                      <center>
+                        <Label text="Powered by Arena Analytics" />
+                      </center>
+                      <left>
+                        <VBox prefHeight="200.0" prefWidth="200.0" />
+                      </left>
+                      <top>
+                        <HBox prefHeight="75.0" prefWidth="75.0">
+                          <children>
+                            <Region prefHeight="75.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                            <ImageView fitHeight="75.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                <Image url="att2.png" />
+                              </image>
+                            </ImageView>
+                          </children>
+                        </HBox>
+                      </top>
+                    </BorderPane>
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

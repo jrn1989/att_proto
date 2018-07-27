@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.arena.popupeventhandler.PopupEventHandler">
+  <children>
+    <VBox prefHeight="200.0" prefWidth="300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <Label text="Nombre:">
+          <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" fx:id="x1" />
+          </VBox.margin>
+        </Label>
+        <TextField fx:id="campoNombre" prefHeight="25.0" prefWidth="250.0">
+          <VBox.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+          </VBox.margin>
+        </TextField>
+        <Label text="Attuid:">
+          <VBox.margin>
+            <Insets left="10.0" right="10.0" top="10.0" />
+          </VBox.margin>
+        </Label>
+        <TextField fx:id="campoAttuid" prefHeight="25.0" prefWidth="250.0" VBox.margin="$x1" />
+        <HBox prefHeight="55.0" prefWidth="300.0">
+          <children>
+            <Button fx:id="botonAceptarPopup" mnemonicParsing="false" text="Aceptar">
+              <HBox.margin>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" fx:id="x2" />
+              </HBox.margin>
+            </Button>
+            <Region prefHeight="55.0" prefWidth="57.0" HBox.hgrow="ALWAYS" />
+            <Button fx:id="botonCancelarPopup" mnemonicParsing="false" text="Cancelar" HBox.margin="$x2" />
+          </children>
+        </HBox>
+      </children>
+    </VBox>
+  </children>
+</AnchorPane>

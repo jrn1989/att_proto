@@ -1,0 +1,37 @@
+
+.pseudoclass1{
+	-fx-background-color: rgb(229, 239, 240);
+}
+
+.tree-cell:colorNivelNada {
+    -fx-background-color: white;
+		/*-fx-text-fill: rgb(143, 172, 180);*/
+}
+
+.tree-cell:colorNivel2 {
+    -fx-background-color: rgb(217, 229, 240);
+		/*-fx-text-fill: rgb(143, 172, 180);*/
+}
+
+.tree-cell:colorNivel3 {
+    -fx-background-color: rgb(143, 172, 180);
+		/*-fx-text-fill: rgb(80, 133, 188);*/
+}
+
+.tree-cell:colorNivel4 {
+    -fx-background-color: rgb(80, 133, 188);
+		/*-fx-text-fill: rgb(8, 96, 168);*/
+}
+
+.tree-cell:colorNivel5 {
+    -fx-background-color: rgb(8, 96, 168);
+		-fx-text-fill: white;
+}
+
+.tree-cell:colorNivel6 {
+    -fx-background-color: white;
+}
+
+.tree-cell:colorNivel7 {
+    -fx-background-color: white;
+}
