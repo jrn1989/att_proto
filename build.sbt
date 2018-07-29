@@ -11,8 +11,8 @@ libraryDependencies += "org.controlsfx" % "controlsfx" % "8.40.14"
 libraryDependencies += "org.scalafx" %% "scalafx" % "8.0.144-R12"
  scalacOptions ++= Seq("-unchecked", "-deprecation", "-Xcheckinit", "-encoding", "utf8", "-feature")
 
-unmanagedJars in Compile += Attributed.blank(file("/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jfxrt.jar"))
-
+//unmanagedJars in Compile += Attributed.blank(file("/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jfxrt.jar"))
+  unmanagedJars in Compile += Attributed.blank(file("/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/ext/jfxrt.jar"))
 
 fork := true
 

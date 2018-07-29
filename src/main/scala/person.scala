@@ -1,7 +1,7 @@
 package com.arena
 import javafx.scene.control.{TreeView,TreeItem,Button,CheckBoxTreeItem};
 import javafx.scene.text.Text
-
+import scala.collection.mutable.ListBuffer
 
 object person {
   case class PersonPrototype(attuid: Int, nombre: String, nivel:Int, infInm: List[PersonPrototype]) {
@@ -25,6 +25,7 @@ object person {
 			return x
 		}*/
 	
+		def getNode():PersonPrototype={return this}
 		def getNombre():String={return this.nombre}	
 		def getAttuid():Int={return this.attuid}	
 		def createTreeViewString( ):TreeItem[String]={
@@ -38,14 +39,14 @@ object person {
 
 		}
 
-		def createTreeView( ):CheckBoxTreeItem[PersonPrototype]={
+		def createTreeView(checkedItems:ListBuffer[CheckBoxTreeItem[PersonPrototype]]):CheckBoxTreeItem[PersonPrototype]={
 			if(!this.infInm.isEmpty){
-				val temp  = new CheckBoxTreeItem[PersonPrototype] (this)
+				val temp  = createTreeItem(this,checkedItems)//new CheckBoxTreeItem[PersonPrototype] (this)
 				temp.setExpanded(true)
-				temp.getChildren().add(this.infInm.head.createTreeView)
-				if(!this.infInm.tail.isEmpty){ for(t<-this.infInm.tail) temp.getChildren().add(t.createTreeView) }
+				temp.getChildren().add(this.infInm.head.createTreeView(checkedItems))
+				if(!this.infInm.tail.isEmpty){ for(t<-this.infInm.tail) temp.getChildren().add(t.createTreeView(checkedItems)) }
 				return temp
-			}else return (new CheckBoxTreeItem[PersonPrototype] (this))
+			}else return createTreeItem(this,checkedItems)/*(new CheckBoxTreeItem[PersonPrototype] (this))*/
 
 		}
 		override def toString = "Nombre: " + this.nombre + ", ATTUID: " +this.attuid + ", Nivel: " + this.nivel   
@@ -86,6 +87,23 @@ object person {
       else this.infInm.foldLeft[Int](1)((a,b) => a+b.headcount)
     }
   }
+	val checkedItems = new ListBuffer[CheckBoxTreeItem[PersonPrototype]]()
+
+	def createTreeItem(x:PersonPrototype,checkedItems:ListBuffer[CheckBoxTreeItem[PersonPrototype]]):CheckBoxTreeItem[PersonPrototype]={
+		val item = new CheckBoxTreeItem[PersonPrototype] (x)
+    item.selectedProperty().addListener((obs, wasChecked, isNowChecked) => {
+        if (isNowChecked) {
+            //checkedItems.add(item);
+						checkedItems += item
+						println(item.getValue())
+        } else {
+            //checkedItems.remove(item);
+						checkedItems -= item
+						println("bye")
+        }
+    });		
+		return item
+	}
 
 	def readFromJson(jsonFile:String):PersonPrototype = {
 			import scala.io.Source

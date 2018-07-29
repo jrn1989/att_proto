@@ -30,6 +30,8 @@ import javafx.stage.{Stage,FileChooser,Modality};
 import com.arena.popupeventhandler.PopupEventHandler
 //import javafx.stage.Modality;
 //import com.arena.person.readFromJson
+import scala.collection.mutable.ListBuffer
+
 
 class MainEventHandler {
 	
@@ -60,7 +62,7 @@ class MainEventHandler {
 	val colorNivel7 = PseudoClass.getPseudoClass("colorNivel7");
 
 	var rama:PersonPrototype=_
-
+	var checkedItems = new ListBuffer[CheckBoxTreeItem[PersonPrototype]]()
 	/*The myStage variable let us keep a reference to the main window*/
 	private var myStage:Stage = _
 	def setStage(stage:Stage):Unit={
@@ -77,20 +79,21 @@ class MainEventHandler {
 		attuidBack = x
 	}*/
 
+	def max(s1: CheckBoxTreeItem[PersonPrototype], s2: CheckBoxTreeItem[PersonPrototype]): 
+		PersonPrototype = if (s1.getValue().nivel > s2.getValue().nivel) s1.getValue().getNode() else s2.getValue().getNode()
+
 
 	def initialize(): Unit= {
-
 		var rootItem = new CheckBoxTreeItem[PersonPrototype]
- 
 		generarRama.setDisable(true)
-
-		/*cargarModificaciones.setOnAction((e: ActionEvent) => {
-								val fxml2 = new FXMLLoader(getClass().getResource("/popup.fxml"))  
+		cargarModificaciones.setOnAction((e: ActionEvent) => {
+			for(a<-checkedItems){println(a.getValue().getNombre())}
+								/*val fxml2 = new FXMLLoader(getClass().getResource("/popup.fxml"))  
 								val root2: AnchorPane = fxml2.load()
 								val controller:PopupEventHandler = fxml2.getController();
-			println(controller.getData())
+			println(controller.getData())*/
 			
-		})*/
+		})
 		// Button generar rama
 		// Toma la rama que este marcada y la guarda en un .json	
 		generarRama.setOnAction((e: ActionEvent) => {
@@ -105,7 +108,9 @@ class MainEventHandler {
 					file = new File(file.getPath() + ".json");
 				}
 				val fileWriter = new FileWriter(file)
-				fileWriter.write(rama.jsonString)
+				//fileWriter.write(rama.jsonString)
+			  val topStudent = checkedItems.reduceLeft(max)
+				fileWriter.write(topStudent.jsonString)
 				fileWriter.close
 			}
 
@@ -124,9 +129,9 @@ class MainEventHandler {
 			if(file!=null){
 				generarRama.setDisable(false)
 				/*This block creates the tree view from the json file*/
-				rootItem = readFromJson(file.toString).createTreeView
+				rootItem = readFromJson(file.toString).createTreeView(checkedItems)
 				val treeTable = new TreeView[PersonPrototype](rootItem)
-				rama = readFromJson(file.toString) /*TODO*/
+				/*rama = readFromJson(file.toString) TODO*/
 				treeTable.setEditable(true)
 				/*****************************************************/
 
