@@ -100,6 +100,7 @@ class MainEventHandler {
 			println("Generar rama")
 
 			val fileChooser = new FileChooser();
+			fileChooser.setTitle("Guardar Plantilla Única");
 			val extFilter = new FileChooser.ExtensionFilter("Archivo .json", "*.json");
 			fileChooser.getExtensionFilters().add(extFilter);
 			var file = fileChooser.showSaveDialog(myStage);
@@ -123,9 +124,11 @@ class MainEventHandler {
 		botonCargarPU.setOnAction((e: ActionEvent) => {
 			/*This block creates a file browser associate with the main window*/	
 			val fileChooser = new FileChooser();
+			fileChooser.setTitle("Cargar Plantilla Única");
 			val extFilter = new FileChooser.ExtensionFilter("Archivo .json", "*.json");
 			fileChooser.getExtensionFilters().add(extFilter);
 			val file = fileChooser.showOpenDialog(myStage);
+			
 			/*****************************************************************/
 			if(file!=null){
 				generarRama.setDisable(false)
@@ -172,7 +175,7 @@ class MainEventHandler {
 						if(item!=null){
 							val wc = new PopupEventHandler()
 							wc.showStage(item.getValue().getNombre(),item.getValue().getAttuid())
-							println(wc.getData())
+							println(wc.getNombreToMain(),wc.getAttuidToMain())
 							//System.out.println("Texto seleccionado: " + item.getValue());
 								//println("Texto seleccionado: " + item.getValue().getNombre());
 								//val fxml2 = new FXMLLoader(getClass().getResource("/popup.fxml"))  
