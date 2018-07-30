@@ -109,9 +109,10 @@ class MainEventHandler {
 				}
 				val fileWriter = new FileWriter(file)
 				//fileWriter.write(rama.jsonString)
-			  val topStudent = checkedItems.reduceLeft(max)
-				fileWriter.write(topStudent.jsonString)
-				fileWriter.close
+			  //sval topStudent = checkedItems.reduceLeft(max)
+				if(checkedItems.last.getValue()!=null)
+				{fileWriter.write(checkedItems.last.getValue().getNode().jsonString)
+				fileWriter.close}
 			}
 
 		})
